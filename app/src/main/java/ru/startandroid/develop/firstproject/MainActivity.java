@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
                 // Кожного разу, коли робиш коміт, треба зробити пуш. Це можливо зробити навіть під час коммітів. От так от.
         // sd ds sd s s s  sc csc s sc s sc c
         //fdfsdfs fsdfsfsf
+        okjhgfd
     }
 }
