@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
         takeKeyEvents(databaseList());
         unbindService();
         FilterQueryProvider (DEFAULT_KEYS_DIALER)
-                // Кожного разу, коли робиш коміт, треба зробити пуш
+                // Кожного разу, коли робиш коміт, треба зробити пуш. Це можливо зробити навіть під час коммітів. От так от.
     }
 }
