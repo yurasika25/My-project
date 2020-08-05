@@ -13,6 +13,5 @@ public class MainActivity extends AppCompatActivity {
 
         takeKeyEvents(databaseList());
         unbindService();
-        ijihi
     }
 }
