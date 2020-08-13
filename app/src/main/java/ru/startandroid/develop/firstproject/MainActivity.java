@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FilterQueryProvider;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -12,4 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    private LoginFragment mListener;
+
+    public void updateDetail() {
+        String curDate = new Date().toString();
+        mListener.LoginFragment(curDate);
+
+    }
+
 }
