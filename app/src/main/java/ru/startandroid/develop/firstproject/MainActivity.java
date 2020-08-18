@@ -1,11 +1,11 @@
 package ru.startandroid.develop.firstproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.widget.FilterQueryProvider;
-
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,14 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        goToFirstFragment();
     }
-
-    private LoginFragment mListener;
-
-    public void updateDetail() {
-        String curDate = new Date().toString();
-        mListener.LoginFragment(curDate);
-
+    public void goToFirstFragment () {
+        Fragment fragment = FragmentOne.newInstance();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.mainContainer,fragment);
+        ft.commit();
     }
-
 }

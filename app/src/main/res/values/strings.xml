@@ -5,4 +5,6 @@
     <string name="member">Not a member yet</string>
     <string name="phoneNumber">PhoneNumber</string>
     <string name="password">Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
