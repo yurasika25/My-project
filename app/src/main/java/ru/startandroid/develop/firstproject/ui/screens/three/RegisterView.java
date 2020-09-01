@@ -1,4 +1,8 @@
 package ru.startandroid.develop.firstproject.ui.screens.three;
 
-public interface RegisterView {
+import ru.startandroid.develop.firstproject.ui.mvp.BasicView;
+
+public interface RegisterView extends BasicView {
+
+        void navigateToRegister();
 }

@@ -5,47 +5,43 @@
     android:id="@+id/twoContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.two.FragmentTwo"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    tools:context=".ui.screens.two.FragmentTwo">
 
+
+    <Button
+        android:id="@+id/RedB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/red"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorRed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/GreenB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/green"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorGreen"
+        app:layout_constraintStart_toEndOf="@+id/RedB"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="163dp"
         android:layout_height="112dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="48dp"
         android:src="@drawable/image"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="250dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/GreenB"
+        android:contentDescription="@string/todo" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Red"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Green"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="147dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

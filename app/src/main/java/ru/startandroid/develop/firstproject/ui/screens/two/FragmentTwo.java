@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import ru.startandroid.develop.firstproject.R;
+import ru.startandroid.develop.firstproject.ui.screens.three.FragmentRegister;
 
 public class FragmentTwo extends Fragment implements TwoView {
 
@@ -18,6 +21,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     ConstraintLayout constraintLayout;
     Button redButton;
     Button greenButton;
+    private TwoPresenter presenter;
 
     public static FragmentTwo newInstance() {
         Bundle args = new Bundle();
@@ -25,6 +29,18 @@ public class FragmentTwo extends Fragment implements TwoView {
         fragment.setArguments(args);
         return fragment;
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        presenter.exitFromView();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.enterWithView(this);
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,22 +48,25 @@ public class FragmentTwo extends Fragment implements TwoView {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_two, container, false);
         constraintLayout = view.findViewById(R.id.twoContainer);
-//        greenButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+        presenter = new TwoPresenter();
+        Button button = view.findViewById(R.id.RedB);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onRedButtonClicked();
+
+            }
+        });
         return  view;
     }
 
     @Override
-    public void makeRedBackground() {
-        constraintLayout.setBackgroundColor(getResources().getColor(R.color.red));
-    }
-
-    @Override
-    public void makeGreenBackground() {
-        constraintLayout.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+    public void navigateToRegister() {
+        Fragment fragment = new  FragmentRegister();
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.mainContainer,fragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 }
