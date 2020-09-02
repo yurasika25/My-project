@@ -12,7 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.Objects;
+
 import ru.startandroid.develop.firstproject.R;
+import ru.startandroid.develop.firstproject.ui.screens.four.FragmentPhotos;
 import ru.startandroid.develop.firstproject.ui.screens.three.FragmentRegister;
 
 public class FragmentTwo extends Fragment implements TwoView {
@@ -21,6 +24,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     ConstraintLayout constraintLayout;
     Button redButton;
     Button greenButton;
+    Button blueButton;
     private TwoPresenter presenter;
 
     public static FragmentTwo newInstance() {
@@ -50,11 +54,27 @@ public class FragmentTwo extends Fragment implements TwoView {
         constraintLayout = view.findViewById(R.id.twoContainer);
         presenter = new TwoPresenter();
         Button button = view.findViewById(R.id.RedB);
+        Button button1 = view.findViewById(R.id.GreenB);
+        Button button2 = view.findViewById(R.id.BlueB);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.onRedButtonClicked();
+            }
 
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onGreenButtonClicked();
+
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onBlueButtonClicked();
             }
         });
         return  view;
@@ -63,10 +83,21 @@ public class FragmentTwo extends Fragment implements TwoView {
     @Override
     public void navigateToRegister() {
         Fragment fragment = new  FragmentRegister();
-        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.mainContainer,fragment);
+        ft.replace(R.id.mainContainer,fragment);
         ft.addToBackStack(null);
         ft.commit();
+    }
+
+    @Override
+    public void navigateToPhotos() {
+        Fragment fragment = new FragmentPhotos();
+        FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.mainContainer,fragment);
+        ft.addToBackStack(null);
+        ft.commit();
+
     }
 }

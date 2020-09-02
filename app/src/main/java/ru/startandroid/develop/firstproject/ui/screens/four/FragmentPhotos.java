@@ -1,28 +1,27 @@
-package ru.startandroid.develop.firstproject.ui.screens.three;
+package ru.startandroid.develop.firstproject.ui.screens.four;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
+
 import ru.startandroid.develop.firstproject.R;
 
-public class FragmentRegister extends Fragment implements RegisterView {
-
-
-    private RegisterPresenter presenter;
+public class FragmentPhotos extends Fragment implements PhotosView {
+    private PhotosPresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.register, container, false);
-        presenter = new RegisterPresenter();
+        View view = inflater.inflate(R.layout.photos_view, container, false);
+        presenter = new PhotosPresenter();
 
         return  view;
 
     }
-
     @Override
     public void onPause() {
         super.onPause();
@@ -37,7 +36,8 @@ public class FragmentRegister extends Fragment implements RegisterView {
 
 
     @Override
-    public void navigateToRegister() {
+    public void navigateToPhotos() {
 
     }
 }
+

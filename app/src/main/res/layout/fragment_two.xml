@@ -13,11 +13,11 @@
         android:id="@+id/RedB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="100dp"
+        android:background="@color/colorRed"
         android:text="@string/red"
         android:textColor="@color/colorWhite"
-        android:background="@color/colorRed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,23 +25,38 @@
         android:id="@+id/GreenB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="100dp"
+        android:background="@color/colorGreen"
         android:text="@string/green"
         android:textColor="@color/colorWhite"
-        android:background="@color/colorGreen"
         app:layout_constraintStart_toEndOf="@+id/RedB"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BlueB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorAccent"
+        android:text="Пташка"
+        android:textColor="@color/colorWhite"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/GreenB"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="163dp"
         android:layout_height="112dp"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="113dp"
         android:layout_marginTop="48dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GreenB"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toBottomOf="@+id/GreenB" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
