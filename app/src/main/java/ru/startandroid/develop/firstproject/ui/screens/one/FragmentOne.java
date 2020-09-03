@@ -68,4 +68,9 @@ public class FragmentOne extends Fragment  implements  OneView{
     public void onCredentialsError() {
         Toast.makeText(getActivity(), "Error", Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public void navigateToPhoto() {
+
+    }
 }

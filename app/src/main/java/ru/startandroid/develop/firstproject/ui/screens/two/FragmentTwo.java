@@ -16,6 +16,7 @@ import java.util.Objects;
 
 import ru.startandroid.develop.firstproject.R;
 import ru.startandroid.develop.firstproject.ui.screens.four.FragmentPhotos;
+import ru.startandroid.develop.firstproject.ui.screens.list.FragmentPhoto;
 import ru.startandroid.develop.firstproject.ui.screens.three.FragmentRegister;
 
 public class FragmentTwo extends Fragment implements TwoView {
@@ -92,12 +93,17 @@ public class FragmentTwo extends Fragment implements TwoView {
 
     @Override
     public void navigateToPhotos() {
-        Fragment fragment = new FragmentPhotos();
+        Fragment fragment = new FragmentPhoto();
         FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.mainContainer,fragment);
         ft.addToBackStack(null);
         ft.commit();
+
+    }
+
+    @Override
+    public void navigateToPhoto() {
 
     }
 }

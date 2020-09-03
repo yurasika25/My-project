@@ -40,4 +40,9 @@ public class FragmentRegister extends Fragment implements RegisterView {
     public void navigateToRegister() {
 
     }
+
+    @Override
+    public void navigateToPhoto() {
+
+    }
 }

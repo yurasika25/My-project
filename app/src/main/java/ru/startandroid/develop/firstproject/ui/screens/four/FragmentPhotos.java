@@ -39,5 +39,10 @@ public class FragmentPhotos extends Fragment implements PhotosView {
     public void navigateToPhotos() {
 
     }
+
+    @Override
+    public void navigateToPhoto() {
+
+    }
 }
 

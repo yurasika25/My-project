@@ -45,4 +45,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
     public void onNavigateToFirst() {
        goToFirstFragment();
     }
+
+    @Override
+    public void navigateToPhoto() {
+
+    }
 }
