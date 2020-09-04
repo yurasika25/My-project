@@ -37,6 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         final TestModel itemList = listItems.get(position);
         holder.txtTitle.setText(itemList.getTitle());
+        holder.txtTime.setText(itemList.getTime());
 
         Glide
               .with(mContext)
@@ -57,10 +58,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public TextView txtTitle;
         public AppCompatImageView image;
+        public TextView txtTime;
         public ViewHolder(View itemView) {
             super(itemView);
-            txtTitle = (TextView) itemView.findViewById(R.id.titleTV);
+            txtTitle =  itemView.findViewById(R.id.titleTV);
             image = itemView.findViewById(R.id.Bird);
+            txtTime = itemView.findViewById((R.id.numbersTV));
         }
     }
 }

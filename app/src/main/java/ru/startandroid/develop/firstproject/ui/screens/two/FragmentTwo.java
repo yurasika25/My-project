@@ -21,7 +21,6 @@ import ru.startandroid.develop.firstproject.ui.screens.three.FragmentRegister;
 
 public class FragmentTwo extends Fragment implements TwoView {
 
-
     ConstraintLayout constraintLayout;
     Button redButton;
     Button greenButton;
@@ -84,7 +83,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     @Override
     public void navigateToRegister() {
         Fragment fragment = new  FragmentRegister();
-        FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+        FragmentManager fm = requireActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.mainContainer,fragment);
         ft.addToBackStack(null);
@@ -94,7 +93,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     @Override
     public void navigateToPhoto() {
         Fragment fragment = new FragmentPhoto();
-        FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+        FragmentManager fm = requireActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.mainContainer,fragment);
         ft.addToBackStack(null);
@@ -105,7 +104,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     @Override
     public void navigateToPhotos() {
         Fragment fragment = new FragmentPhotos();
-        FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+        FragmentManager fm =requireActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.mainContainer,fragment);
         ft.addToBackStack(null);
