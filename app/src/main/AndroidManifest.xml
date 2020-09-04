@@ -9,9 +9,9 @@
     <application
 
         android:allowBackup="true"
-        android:icon="@drawable/photo"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/myphoto"
+        android:label="Cat and bird"
+        android:roundIcon="@drawable/myphoto"
         android:supportsRtl="true"
         android:theme="@style/MyStyle">
         <activity android:name=".ui.screens.main.MainActivity">
