@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="match_parent"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:text="М'яу"
         android:background="@color/cardview_light_background"

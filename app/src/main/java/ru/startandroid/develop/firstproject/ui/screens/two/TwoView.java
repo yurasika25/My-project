@@ -7,5 +7,7 @@ public interface TwoView extends BasicView {
     void navigateToRegister();
 
     void navigateToPhotos();
+
+    void navigateToPhoto();
 }
 

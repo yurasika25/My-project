@@ -9,9 +9,9 @@ public class TwoPresenter extends BasicPresenter<TwoView> {
     }
 
     public void onGreenButtonClicked(){
-        getView().navigateToRegister();
+        getView().navigateToPhotos();
     }
     public void onBlueButtonClicked(){
-        getView().navigateToPhotos();
+        getView().navigateToPhoto();
     }
 }

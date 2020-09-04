@@ -92,7 +92,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     }
 
     @Override
-    public void navigateToPhotos() {
+    public void navigateToPhoto() {
         Fragment fragment = new FragmentPhoto();
         FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
@@ -103,7 +103,13 @@ public class FragmentTwo extends Fragment implements TwoView {
     }
 
     @Override
-    public void navigateToPhoto() {
+    public void navigateToPhotos() {
+        Fragment fragment = new FragmentPhotos();
+        FragmentManager fm = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.mainContainer,fragment);
+        ft.addToBackStack(null);
+        ft.commit();
 
     }
 }
