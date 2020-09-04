@@ -25,6 +25,7 @@ public class FragmentPhoto extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //dkfskksdkf
 
         View view = inflater.inflate(R.layout.photo_main, container, false);
         presenter = new PhotoPresenter();
