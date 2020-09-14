@@ -31,7 +31,7 @@ public class FragmentOne extends Fragment  implements  OneView{
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_one, container, false);
-        presenter =new  OnePresenter();
+        presenter = new  OnePresenter();
         Button loginB = view.findViewById(R.id.loginButton);
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override

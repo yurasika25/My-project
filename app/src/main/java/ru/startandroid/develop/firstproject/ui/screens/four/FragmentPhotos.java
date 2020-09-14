@@ -1,5 +1,6 @@
 package ru.startandroid.develop.firstproject.ui.screens.four;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,13 @@ public class FragmentPhotos extends Fragment implements PhotosView {
 
         View view = inflater.inflate(R.layout.photos_view, container, false);
         presenter = new PhotosPresenter();
+        view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer player = MediaPlayer.create(getContext(), R.raw.meow);
+                player.start();
+            }
+        });
 
         return  view;
 

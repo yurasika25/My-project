@@ -83,7 +83,7 @@
         android:id="@+id/loginButton"
         android:layout_width="214dp"
         android:layout_height="25dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/never"
         android:text="Щось цікаве"
         android:textAllCaps="true"
         android:textColor="@color/colorWhite"

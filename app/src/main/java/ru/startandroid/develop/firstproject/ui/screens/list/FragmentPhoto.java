@@ -22,6 +22,7 @@ public class FragmentPhoto extends Fragment {
 
     private PhotoPresenter presenter;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class FragmentPhoto extends Fragment {
         super.onResume();
         presenter.enterWithView(this);
     }
+
 
 
 }

@@ -1,5 +1,6 @@
 package ru.startandroid.develop.firstproject.ui.screens.two;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -12,8 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import java.util.Objects;
-
 import ru.startandroid.develop.firstproject.R;
 import ru.startandroid.develop.firstproject.ui.screens.four.FragmentPhotos;
 import ru.startandroid.develop.firstproject.ui.screens.list.FragmentPhoto;
@@ -22,9 +21,6 @@ import ru.startandroid.develop.firstproject.ui.screens.three.FragmentRegister;
 public class FragmentTwo extends Fragment implements TwoView {
 
     ConstraintLayout constraintLayout;
-    Button redButton;
-    Button greenButton;
-    Button blueButton;
     private TwoPresenter presenter;
 
     public static FragmentTwo newInstance() {
@@ -53,10 +49,10 @@ public class FragmentTwo extends Fragment implements TwoView {
         View view = inflater.inflate(R.layout.fragment_two, container, false);
         constraintLayout = view.findViewById(R.id.twoContainer);
         presenter = new TwoPresenter();
+
         Button button = view.findViewById(R.id.RedB);
         Button button1 = view.findViewById(R.id.GreenB);
         Button button2 = view.findViewById(R.id.BlueB);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +71,14 @@ public class FragmentTwo extends Fragment implements TwoView {
             @Override
             public void onClick(View view) {
                 presenter.onBlueButtonClicked();
+            }
+        });
+
+        view.findViewById(R.id.smile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer player = MediaPlayer.create(getContext(), R.raw.meow);
+                player.start();
             }
         });
         return  view;
@@ -104,7 +108,7 @@ public class FragmentTwo extends Fragment implements TwoView {
     @Override
     public void navigateToPhotos() {
         Fragment fragment = new FragmentPhotos();
-        FragmentManager fm =requireActivity().getSupportFragmentManager();
+        FragmentManager fm = requireActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.mainContainer,fragment);
         ft.addToBackStack(null);
