@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import ru.startandroid.develop.firstproject.R;
@@ -30,13 +31,18 @@ public class FragmentOne extends Fragment  implements  OneView{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
+        final View view = inflater.inflate(R.layout.fragment_one, container, false);
         presenter = new  OnePresenter();
-        Button loginB = view.findViewById(R.id.loginButton);
+        final Button loginB = view.findViewById(R.id.loginButton);
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                presenter.onLoginButtonClicked("78568557 ", "ггггггг8");
+            public void onClick(View view_) {
+                EditText number = view.findViewById(R.id.phoneNumberET);
+                String field1 = number.getText().toString();
+                EditText number2 = view.findViewById(R.id.passwordET);
+                String field2 = number2.getText().toString();
+
+                presenter.onLoginButtonClicked(field1, field2);
             }
         });
         return view;
@@ -65,9 +71,10 @@ public class FragmentOne extends Fragment  implements  OneView{
     }
 
     @Override
-    public void onCredentialsError() {
-        Toast.makeText(getActivity(), "Error", Toast.LENGTH_LONG).show();
+    public void onCredentialsWrong() {
+        Toast.makeText(getActivity(), "МЕНЕ ПІДСТАВИЛИ", Toast.LENGTH_LONG).show();
     }
+
 
     @Override
     public void navigateToPhoto() {

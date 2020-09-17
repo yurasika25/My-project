@@ -5,7 +5,5 @@ import ru.startandroid.develop.firstproject.ui.mvp.BasicView;
 public interface  OneView extends BasicView {
 
      void onNavigateToTwo();
-     void onCredentialsError();
-
-
+     void onCredentialsWrong();
 }

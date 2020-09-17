@@ -74,8 +74,7 @@
             android:id="@+id/phoneNumberET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Скажи м'яу"
-            tools:ignore="MissingConstraints" />
+            android:hint="Скажи м'яу" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
